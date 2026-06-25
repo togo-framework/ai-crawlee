@@ -1,6 +1,6 @@
 # ai-crawlee — documentation
 
-  <img src=".github/assets/togo-mark.svg" alt="togo" height="64" />
+Go-native site crawler data-source for the togo AI kit
 
 ## Overview
 
@@ -19,7 +19,7 @@ A capability plugin — it self-registers on boot; no driver selector needed.
 
 ## Configuration
 
-Environment variables read by this plugin (extracted from the source):
+Environment variables read by this plugin (extracted from the source — see the gateway/provider docs for each value):
 
 _No environment variables read directly (uses the kernel/base config or the app DB)._
 
@@ -27,12 +27,11 @@ _No environment variables read directly (uses the kernel/base config or the app 
 
 ```go
 // A data source for ai-rag / agents: fetch/scrape/search web content.
-src := crawlee.FromKernel(k)
-docs, err := src.Fetch(ctx, "https://example.com")
+docs, err := crawlee.FromKernel(k).Fetch(ctx, "https://example.com")
 ```
 
 ## Links
 
 - Marketplace: https://to-go.dev/marketplace
 - Source: https://github.com/togo-framework/ai-crawlee
-- README: ../README.md
+- Full README: ../README.md
